@@ -26,14 +26,16 @@ class App extends Component {
             isCompleted: true
         }],
         showCompleted: false,
+        lastId: 5
     }
   }
 
   
   onCreateNewItem = () => {
-    const more = this.state.list.length + 1;
+   
     this.setState({
-      list: [...this.state.list, {id: more, title: 'Task ' + more, isCompleted: false}]
+      list: [...this.state.list, {id: this.state.lastId, title: 'Task ' + this.state.lastId, isCompleted: false}],
+      lastId: this.state.lastId +1
     })
 
   }
